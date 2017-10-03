@@ -1,0 +1,94 @@
+C51 COMPILER V9.54   MAIN                                                                  04/27/2017 14:25:49 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1                    //Group   #53
+   2              //Ahmed Mohamed El-Halawany   2689
+   3              //Farida Adham Abd El-Hady    2616
+   4          
+   5          #include <reg51.h>
+   6          
+   7          #define input P1
+   8          sbit output = P2^0;
+   9          sbit error = P2^6;
+  10          sbit output_switch = P2^7;
+  11          
+  12          char get_input();
+  13          void Timer(unsigned char, unsigned char);
+  14          
+  15          char high_input, low_input;
+  16          char TimerH_high, TimerH_low, TimerL_high, TimerL_low;
+  17          float duty_cycle = 0;
+  18          short int delay_total;
+  19          
+  20          void main(){
+  21   1        output_switch = 1;
+  22   1        input = 0xff;
+  23   1        
+  24   1        while(1){
+  25   2          get_input();
+  26   2          while(output_switch == 0){
+  27   3            output = 1; 
+  28   3            Timer(TimerH_high, TimerH_low);
+  29   3            output = 0;
+  30   3            Timer(TimerL_high, TimerL_low);
+  31   3          }
+  32   2        }
+  33   1      }
+  34          
+  35          char get_input()
+  36          {
+  37   1        low_input = input & 0x0f;
+  38   1        high_input = (input >> 4) & 0x0f ;
+  39   1        
+  40   1        if( high_input > 9 || low_input > 9 )
+  41   1        {
+  42   2          error = 0;
+  43   2          return -1;
+  44   2        }
+  45   1        error = 1;
+  46   1        
+  47   1        duty_cycle = ((high_input * 10) + low_input) / 100;
+  48   1        
+  49   1        delay_total =  0xffff - (0x0e67 * duty_cycle);
+  50   1        TimerH_high = (delay_total >> 8) & 0x00ff;
+  51   1        TimerH_low = delay_total & 0x00ff;
+  52   1        
+  53   1        delay_total =  0xffff - (0x0e67 * (1 - duty_cycle));
+  54   1        TimerL_high = (delay_total >> 8) & 0x00ff;
+C51 COMPILER V9.54   MAIN                                                                  04/27/2017 14:25:49 PAGE 2   
+
+  55   1        TimerL_low = delay_total & 0x00ff;
+  56   1        
+  57   1        return 0;
+  58   1      }
+  59          
+  60          void Timer(unsigned char High, unsigned char Low){
+  61   1         TMOD = 0x01;
+  62   1         TL0 = Low;
+  63   1         TH0 = High;
+  64   1         TR0 = 1;
+  65   1         while(TF0 == 0);
+  66   1         TR0 = 0;
+  67   1         TF0 = 0;  
+  68   1        } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    250    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     12    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
