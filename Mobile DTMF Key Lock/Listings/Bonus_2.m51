@@ -1,0 +1,136 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/25/2017  10:59:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\Bonus_2 PRINT (.\Listings\Bonus_2.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Bonus_2 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000DH     UNIT         ?DT?MAIN
+            IDATA   0015H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     07FAH                  *** GAP ***
+            CODE    0800H     0095H     UNIT         ?PR?GET_INPUT?MAIN
+            CODE    0895H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0921H     0041H     UNIT         ?PR?MAIN?MAIN
+            CODE    0962H     0011H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Bonus_2 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Bonus_2 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  D:0008H         PUBLIC        option
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  10:59:49  PAGE 2
+
+
+  C:0921H         PUBLIC        main
+  D:0009H         PUBLIC        count
+  D:000AH         PUBLIC        temp
+  D:000CH         PUBLIC        keys
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:000EH         PUBLIC        finish_change
+  C:0800H         PUBLIC        get_input
+  D:000FH         PUBLIC        key_lock
+  D:0011H         PUBLIC        count_new
+  D:0012H         PUBLIC        temp_old
+  B:00A0H.0       PUBLIC        unlocked
+  D:0014H         PUBLIC        change
+  B:00A0H.1       PUBLIC        locked
+  -------         PROC          GET_INPUT
+  C:0800H         LINE#         17
+  C:0809H         LINE#         18
+  C:080FH         LINE#         19
+  C:0815H         LINE#         20
+  C:081AH         LINE#         21
+  C:081EH         LINE#         22
+  C:0827H         LINE#         23
+  C:082CH         LINE#         24
+  C:0832H         LINE#         25
+  C:083BH         LINE#         26
+  C:084DH         LINE#         27
+  C:0859H         LINE#         28
+  C:085BH         LINE#         29
+  C:0865H         LINE#         30
+  C:0868H         LINE#         31
+  C:086AH         LINE#         32
+  C:086CH         LINE#         33
+  C:086FH         LINE#         34
+  C:0875H         LINE#         35
+  C:087AH         LINE#         36
+  C:0880H         LINE#         37
+  C:088EH         LINE#         38
+  -------         ENDPROC       GET_INPUT
+  -------         PROC          MAIN
+  C:0921H         LINE#         40
+  C:0921H         LINE#         41
+  C:0923H         LINE#         42
+  C:0925H         LINE#         43
+  C:0927H         LINE#         44
+  C:092AH         LINE#         45
+  C:092CH         LINE#         46
+  C:092EH         LINE#         47
+  C:092EH         LINE#         48
+  C:0938H         LINE#         49
+  C:093AH         LINE#         50
+  C:093CH         LINE#         51
+  C:0941H         LINE#         52
+  C:0943H         LINE#         53
+  C:0945H         LINE#         54
+  C:0948H         LINE#         55
+  C:094EH         LINE#         56
+  C:0953H         LINE#         57
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  10:59:49  PAGE 3
+
+
+  C:0955H         LINE#         58
+  C:0957H         LINE#         59
+  C:095AH         LINE#         60
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00E9H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=22.0 xdata=0 code=377
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,110 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/25/2017  12:27:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\Bonus_3 PRINT (.\Listings\Bonus_3.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Bonus_3 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?MAIN
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     07FAH                  *** GAP ***
+            CODE    0800H     00E6H     UNIT         ?PR?MAIN?MAIN
+            CODE    08E6H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0972H     0011H     UNIT         ?PR?GET_INPUT?MAIN
+            CODE    0983H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Bonus_3 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Bonus_3 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0008H         PUBLIC        check
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  12:27:58  PAGE 2
+
+
+  C:0800H         PUBLIC        main
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  C:0972H         PUBLIC        get_input
+  D:0009H         PUBLIC        message
+  -------         PROC          GET_INPUT
+  C:0972H         LINE#         12
+  C:0974H         LINE#         13
+  C:097DH         LINE#         14
+  C:0980H         LINE#         15
+  -------         ENDPROC       GET_INPUT
+  -------         PROC          MAIN
+  C:0800H         LINE#         17
+  C:0800H         LINE#         18
+  C:0802H         LINE#         19
+  C:0804H         LINE#         20
+  C:0806H         LINE#         21
+  C:0809H         LINE#         22
+  C:0809H         LINE#         23
+  C:080EH         LINE#         24
+  C:0819H         LINE#         25
+  C:0826H         LINE#         26
+  C:0833H         LINE#         27
+  C:0840H         LINE#         28
+  C:084DH         LINE#         29
+  C:085AH         LINE#         30
+  C:0867H         LINE#         31
+  C:0874H         LINE#         32
+  C:0881H         LINE#         33
+  C:088FH         LINE#         34
+  C:089DH         LINE#         35
+  C:08ABH         LINE#         36
+  C:08B9H         LINE#         37
+  C:08C7H         LINE#         38
+  C:08D5H         LINE#         39
+  C:08E3H         LINE#         40
+  C:08E3H         LINE#         41
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00FDH BYTE (12%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=397
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

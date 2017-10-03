@@ -1,0 +1,66 @@
+C51 COMPILER V9.54   MAIN                                                                  05/25/2017 12:27:58 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1                    //Group   #53
+   2              //Farida Adham Abd El-Hady    2616
+   3          
+   4          #include <reg51.h>
+   5          
+   6          #define input P1
+   7          #define output P2
+   8          
+   9          short int message;
+  10          unsigned char check = 0;
+  11          
+  12          void get_input (void) interrupt 0 {
+  13   1        message = input & 0x0f;
+  14   1        check = 1;
+  15   1        }
+  16          
+  17          void main(){
+  18   1        IT0 = 1;
+  19   1        EX0 = 1;
+  20   1        EA = 1;
+  21   1        input = 0xff;
+  22   1        while(1){
+  23   2          if(check == 1){
+  24   3            if(message == 0x00) { output = 0x03; }
+  25   3            else if(message == 0x01) { output = 0x9F; }
+  26   3            else if(message == 0x02) { output = 0x25; }
+  27   3            else if(message == 0x03) { output = 0x0D; }
+  28   3            else if(message == 0x04) { output = 0x99; }
+  29   3            else if(message == 0x05) { output = 0x49; }
+  30   3            else if(message == 0x06) { output = 0x41; }
+  31   3            else if(message == 0x07) { output = 0x1D; }
+  32   3            else if(message == 0x08) { output = 0x01; }
+  33   3            else if(message == 0x09) { output = 0x09; }
+  34   3            else if(message == 0x0A) { output = 0x11; }
+  35   3            else if(message == 0x0B) { output = 0xC1; }
+  36   3            else if(message == 0x0C) { output = 0x63; }
+  37   3            else if(message == 0x0D) { output = 0x85; }
+  38   3            else if(message == 0x0E) { output = 0x61; }
+  39   3            else if(message == 0x0F) { output = 0x71; }
+  40   3          }
+  41   2        }
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    247    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

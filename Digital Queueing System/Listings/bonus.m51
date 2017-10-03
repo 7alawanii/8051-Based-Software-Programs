@@ -1,0 +1,287 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/25/2017  00:53:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\bonusone.obj TO .\Objects\bonus PRINT (.\Listings\bonus.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\bonusone.obj (BONUSONE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\bonus (BONUSONE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?BONUSONE
+            DATA    000DH     0001H     UNIT         _DATA_GROUP_
+                    000EH     0012H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00CCH     UNIT         ?PR?KEYPAD_SCAN?BONUSONE
+            CODE    08CCH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0958H     0025H     UNIT         ?PR?INCREMENT?BONUSONE
+            CODE    097DH     0024H     UNIT         ?PR?DEBOUNCE?BONUSONE
+            CODE    09A1H     0023H     UNIT         ?PR?DECREMENT?BONUSONE
+            CODE    09C4H     0018H     UNIT         ?PR?MAIN?BONUSONE
+            CODE    09DCH     000FH     UNIT         ?PR?RESET?BONUSONE
+            CODE    09EBH     000FH     UNIT         ?PR?_NORMALKEY?BONUSONE
+            CODE    09FAH     000AH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\bonus (BONUSONE)
+
+
+SEGMENT                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH     START    LENGTH
+--------------------------------------------------------------------
+?C_C51STARTUP                    -----    -----      -----    -----
+  +--> ?PR?MAIN?BONUSONE
+  +--> ?C_INITSEG
+
+?PR?MAIN?BONUSONE                0020H.0  0000H.1    -----    -----
+  +--> ?PR?KEYPAD_SCAN?BONUSONE
+
+?PR?KEYPAD_SCAN?BONUSONE         -----    -----      000DH    0001H
+  +--> ?PR?INCREMENT?BONUSONE
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  00:53:29  PAGE 2
+
+
+  +--> ?PR?_NORMALKEY?BONUSONE
+  +--> ?PR?DECREMENT?BONUSONE
+  +--> ?PR?RESET?BONUSONE
+  +--> ?PR?DEBOUNCE?BONUSONE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\bonus (BONUSONE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BONUSONE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0009H         PUBLIC        second
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:0090H.3       PUBLIC        c0
+  B:0090H.2       PUBLIC        c1
+  B:0090H.1       PUBLIC        c2
+  B:0090H.0       PUBLIC        c3
+  D:000AH         PUBLIC        pKey
+  B:0090H.7       PUBLIC        r0
+  B:0090H.6       PUBLIC        r1
+  B:0090H.5       PUBLIC        r2
+  B:0090H.4       PUBLIC        r3
+  C:09DCH         PUBLIC        reset
+  C:09C4H         PUBLIC        main
+  C:0800H         PUBLIC        KeyPad_Scan
+  D:000BH         SYMBOL        first
+  D:000CH         SYMBOL        Last_valid_Key_G
+  C:09A1H         PUBLIC        decrement
+  C:097DH         PUBLIC        debounce
+  C:0958H         PUBLIC        increment
+  C:09EBH         PUBLIC        _normalkey
+  -------         PROC          DEBOUNCE
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:097DH         LINE#         15
+  C:097DH         LINE#         16
+  C:097DH         LINE#         17
+  C:0981H         LINE#         18
+  C:0985H         LINE#         20
+  C:0985H         LINE#         21
+  C:09A0H         LINE#         23
+  -------         ENDPROC       DEBOUNCE
+  -------         PROC          RESET
+  C:09DCH         LINE#         24
+  C:09DCH         LINE#         25
+  C:09DCH         LINE#         26
+  C:09DFH         LINE#         27
+  C:09E1H         LINE#         28
+  C:09EAH         LINE#         29
+  -------         ENDPROC       RESET
+  -------         PROC          DECREMENT
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  00:53:29  PAGE 3
+
+
+  C:09A1H         LINE#         31
+  C:09A1H         LINE#         32
+  C:09A1H         LINE#         33
+  C:09A5H         LINE#         34
+  C:09A5H         LINE#         35
+  C:09A9H         LINE#         36
+  C:09A9H         LINE#         37
+  C:09ACH         LINE#         38
+  C:09AFH         LINE#         39
+  C:09AFH         LINE#         40
+  C:09B1H         LINE#         42
+  C:09B1H         LINE#         43
+  C:09B4H         LINE#         44
+  C:09B6H         LINE#         45
+  C:09B6H         LINE#         46
+  C:09B6H         LINE#         47
+  C:09B8H         LINE#         49
+  C:09B8H         LINE#         50
+  C:09BAH         LINE#         51
+  C:09C3H         LINE#         52
+  C:09C3H         LINE#         53
+  -------         ENDPROC       DECREMENT
+  -------         PROC          INCREMENT
+  C:0958H         LINE#         54
+  C:0958H         LINE#         55
+  C:0958H         LINE#         56
+  C:095EH         LINE#         57
+  C:095EH         LINE#         58
+  C:0963H         LINE#         59
+  C:0963H         LINE#         60
+  C:0966H         LINE#         61
+  C:0968H         LINE#         62
+  C:0968H         LINE#         63
+  C:096AH         LINE#         65
+  C:096AH         LINE#         66
+  C:096DH         LINE#         67
+  C:096FH         LINE#         68
+  C:096FH         LINE#         69
+  C:096FH         LINE#         70
+  C:0971H         LINE#         72
+  C:0971H         LINE#         73
+  C:0973H         LINE#         74
+  C:097CH         LINE#         75
+  C:097CH         LINE#         76
+  -------         ENDPROC       INCREMENT
+  -------         PROC          KEYPAD_SCAN
+  -------         DO            
+  D:0008H         SYMBOL        Old_Key
+  D:000DH         SYMBOL        Key
+  -------         ENDDO         
+  C:0800H         LINE#         82
+  C:0800H         LINE#         83
+  C:0800H         LINE#         85
+  C:0803H         LINE#         87
+  C:0805H         LINE#         88
+  C:0808H         LINE#         90
+  C:080BH         LINE#         91
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  00:53:29  PAGE 4
+
+
+  C:080DH         LINE#         92
+  C:0813H         LINE#         93
+  C:0813H         LINE#         94
+  C:0815H         LINE#         95
+  C:081BH         LINE#         96
+  C:081BH         LINE#         97
+  C:081DH         LINE#         98
+  C:0823H         LINE#         99
+  C:0828H         LINE#         100
+  C:0828H         LINE#         101
+  C:082AH         LINE#         104
+  C:082CH         LINE#         105
+  C:082FH         LINE#         107
+  C:0832H         LINE#         108
+  C:0834H         LINE#         109
+  C:083AH         LINE#         110
+  C:083AH         LINE#         111
+  C:083CH         LINE#         112
+  C:0842H         LINE#         113
+  C:0842H         LINE#         114
+  C:0844H         LINE#         115
+  C:084AH         LINE#         116
+  C:084FH         LINE#         117
+  C:084FH         LINE#         118
+  C:0851H         LINE#         121
+  C:0853H         LINE#         122
+  C:0859H         LINE#         123
+  C:085FH         LINE#         124
+  C:0864H         LINE#         125
+  C:0864H         LINE#         126
+  C:086AH         LINE#         127
+  C:086FH         LINE#         128
+  C:086FH         LINE#         129
+  C:0875H         LINE#         130
+  C:087AH         LINE#         131
+  C:087AH         LINE#         132
+  C:087CH         LINE#         134
+  C:087EH         LINE#         135
+  C:0886H         LINE#         136
+  C:088EH         LINE#         137
+  C:0894H         LINE#         138
+  C:0899H         LINE#         139
+  C:089BH         LINE#         140
+  C:089EH         LINE#         141
+  C:08A1H         LINE#         142
+  C:08A1H         LINE#         144
+  C:08A3H         LINE#         146
+  C:08A6H         LINE#         148
+  C:08ABH         LINE#         149
+  C:08ABH         LINE#         150
+  C:08AEH         LINE#         151
+  C:08B1H         LINE#         152
+  C:08B4H         LINE#         153
+  C:08B4H         LINE#         155
+  C:08B9H         LINE#         156
+  C:08B9H         LINE#         157
+  C:08BDH         LINE#         158
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  00:53:29  PAGE 5
+
+
+  C:08BDH         LINE#         159
+  C:08C0H         LINE#         160
+  C:08C3H         LINE#         161
+  C:08C6H         LINE#         162
+  C:08C6H         LINE#         163
+  C:08C6H         LINE#         164
+  C:08C9H         LINE#         165
+  C:08CBH         LINE#         166
+  -------         ENDPROC       KEYPAD_SCAN
+  -------         PROC          _NORMALKEY
+  D:0007H         SYMBOL        key
+  C:09EBH         LINE#         167
+  C:09EBH         LINE#         168
+  C:09EBH         LINE#         169
+  C:09EEH         LINE#         170
+  C:09F0H         LINE#         171
+  C:09F9H         LINE#         172
+  -------         ENDPROC       _NORMALKEY
+  -------         PROC          MAIN
+  -------         DO            
+  B:0020H.0       SYMBOL        result
+  -------         ENDDO         
+  C:09C4H         LINE#         173
+  C:09C4H         LINE#         174
+  C:09C4H         LINE#         178
+  C:09C7H         LINE#         179
+  C:09CAH         LINE#         180
+  C:09CCH         LINE#         181
+  C:09CEH         LINE#         182
+  C:09D0H         LINE#         183
+  C:09D2H         LINE#         185
+  C:09D2H         LINE#         186
+  C:09D2H         LINE#         187
+  C:09DAH         LINE#         188
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BONUSONE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0177H BYTE (18%) *
+******************************************************************************
+
+Program Size: data=15.1 xdata=0 code=519
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

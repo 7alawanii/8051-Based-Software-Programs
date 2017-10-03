@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\Bonus_3" 
+PRINT(".\Listings\Bonus_3.m51") RAMSIZE(256) 
