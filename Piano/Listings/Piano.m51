@@ -1,0 +1,178 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/21/2017  23:30:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Piano.obj TO .\Objects\Piano PRINT (.\Listings\Piano.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Piano.obj (PIANO)
+
+
+LINK MAP OF MODULE:  .\Objects\Piano (PIANO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     00BDH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Piano (PIANO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PIANO
+  C:0060H         SYMBOL        A_LOOP
+  C:00AAH         SYMBOL        A_TONE
+  C:006EH         SYMBOL        B_LOOP
+  C:00B3H         SYMBOL        B_TONE
+  C:001AH         SYMBOL        C_LOOP
+  C:007CH         SYMBOL        C_TONE
+  C:0028H         SYMBOL        D_LOOP
+  C:0085H         SYMBOL        D_TONE
+  C:0036H         SYMBOL        E_LOOP
+  C:008EH         SYMBOL        E_TONE
+  C:0044H         SYMBOL        F_LOOP
+  C:0097H         SYMBOL        F_TONE
+  C:0052H         SYMBOL        G_LOOP
+  C:00A0H         SYMBOL        G_TONE
+  C:0003H         SYMBOL        HERE
+  C:00ACH         SYMBOL        LOOP1A
+  C:00B5H         SYMBOL        LOOP1B
+  C:007EH         SYMBOL        LOOP1C
+  C:0087H         SYMBOL        LOOP1D
+  C:0090H         SYMBOL        LOOP1E
+  C:0099H         SYMBOL        LOOP1F
+  C:00A2H         SYMBOL        LOOP1G
+  C:00AEH         SYMBOL        LOOP2A
+  C:00B7H         SYMBOL        LOOP2B
+  C:0080H         SYMBOL        LOOP2C
+  C:0089H         SYMBOL        LOOP2D
+  C:0092H         SYMBOL        LOOP2E
+  C:009BH         SYMBOL        LOOP2F
+  C:00A4H         SYMBOL        LOOP2G
+  C:0066H         SYMBOL        LOOPA
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/21/2017  23:30:42  PAGE 2
+
+
+  C:0074H         SYMBOL        LOOPB
+  C:0020H         SYMBOL        LOOPC
+  C:002EH         SYMBOL        LOOPD
+  C:003CH         SYMBOL        LOOPE
+  C:004AH         SYMBOL        LOOPF
+  C:0058H         SYMBOL        LOOPG
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         6
+  C:0003H         LINE#         7
+  C:0006H         LINE#         8
+  C:0009H         LINE#         9
+  C:000CH         LINE#         10
+  C:000FH         LINE#         11
+  C:0012H         LINE#         12
+  C:0015H         LINE#         13
+  C:0018H         LINE#         14
+  C:001AH         LINE#         16
+  C:001CH         LINE#         17
+  C:001EH         LINE#         18
+  C:0020H         LINE#         19
+  C:0022H         LINE#         20
+  C:0024H         LINE#         21
+  C:0026H         LINE#         22
+  C:0028H         LINE#         24
+  C:002AH         LINE#         25
+  C:002CH         LINE#         26
+  C:002EH         LINE#         27
+  C:0030H         LINE#         28
+  C:0032H         LINE#         29
+  C:0034H         LINE#         30
+  C:0036H         LINE#         32
+  C:0038H         LINE#         33
+  C:003AH         LINE#         34
+  C:003CH         LINE#         35
+  C:003EH         LINE#         36
+  C:0040H         LINE#         37
+  C:0042H         LINE#         38
+  C:0044H         LINE#         40
+  C:0046H         LINE#         41
+  C:0048H         LINE#         42
+  C:004AH         LINE#         43
+  C:004CH         LINE#         44
+  C:004EH         LINE#         45
+  C:0050H         LINE#         46
+  C:0052H         LINE#         48
+  C:0054H         LINE#         49
+  C:0056H         LINE#         50
+  C:0058H         LINE#         51
+  C:005AH         LINE#         52
+  C:005CH         LINE#         53
+  C:005EH         LINE#         54
+  C:0060H         LINE#         56
+  C:0062H         LINE#         57
+  C:0064H         LINE#         58
+  C:0066H         LINE#         59
+  C:0068H         LINE#         60
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/21/2017  23:30:42  PAGE 3
+
+
+  C:006AH         LINE#         61
+  C:006CH         LINE#         62
+  C:006EH         LINE#         64
+  C:0070H         LINE#         65
+  C:0072H         LINE#         66
+  C:0074H         LINE#         67
+  C:0076H         LINE#         68
+  C:0078H         LINE#         69
+  C:007AH         LINE#         70
+  C:007CH         LINE#         73
+  C:007EH         LINE#         74
+  C:0080H         LINE#         75
+  C:0082H         LINE#         76
+  C:0084H         LINE#         77
+  C:0085H         LINE#         79
+  C:0087H         LINE#         80
+  C:0089H         LINE#         81
+  C:008BH         LINE#         82
+  C:008DH         LINE#         83
+  C:008EH         LINE#         85
+  C:0090H         LINE#         86
+  C:0092H         LINE#         87
+  C:0094H         LINE#         88
+  C:0096H         LINE#         89
+  C:0097H         LINE#         91
+  C:0099H         LINE#         92
+  C:009BH         LINE#         93
+  C:009DH         LINE#         94
+  C:009FH         LINE#         95
+  C:00A0H         LINE#         97
+  C:00A2H         LINE#         98
+  C:00A4H         LINE#         99
+  C:00A6H         LINE#         100
+  C:00A8H         LINE#         101
+  C:00A9H         LINE#         102
+  C:00AAH         LINE#         104
+  C:00ACH         LINE#         105
+  C:00AEH         LINE#         106
+  C:00B0H         LINE#         107
+  C:00B2H         LINE#         108
+  C:00B3H         LINE#         110
+  C:00B5H         LINE#         111
+  C:00B7H         LINE#         112
+  C:00B9H         LINE#         113
+  C:00BBH         LINE#         114
+  C:00BCH         LINE#         115
+  -------         ENDMOD        PIANO
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BDH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=189
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
